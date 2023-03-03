@@ -1,8 +1,8 @@
 Drop table departments CASCADE;
 
 CREATE TABLE departments (
-dept_no VARCHAR(20),
-dept_name VARCHAR(20)
+dept_no VARCHAR(20) NOT NULL,
+dept_name VARCHAR(20) NOT NULL
 );
 
 	Alter TABLE departments
@@ -13,11 +13,11 @@ dept_name VARCHAR(20)
 	DELETE from departments
 	Where dept_no = 'dept_no' and dept_name='dept_name';
 
-Drop Table dept_emp;
+Drop Table dept_emp CASCADE;
 
 CREATE TABLE dept_emp (
-emp_no int,
-dept_no VARCHAR(20)
+emp_no int NOT NULL,
+dept_no VARCHAR(20) NOT NULL
 );
 
 	Alter TABLE dept_emp
@@ -31,20 +31,20 @@ Drop Table dept_manager;
 
 CREATE TABLE dept_manager (
 dept_no VARCHAR(10),
-emp_no int
+emp_no int NOT NULL
 );
 
 	Alter TABLE dept_manager
-	ADD PRIMARY KEY(emp_no);
+	ADD PRIMARY KEY(emp_no) ;
 
 drop table employees CASCADE;
 
 CREATE TABLE employees (
-emp_no int,
-emp_title_id VARCHAR(10),
+emp_no int NOT NULL,
+emp_title_id VARCHAR(10) ,
 birth_date DATE,
-first_name VARCHAR(30),
-last_name VARCHAR(30),
+first_name VARCHAR(30) NOT NULL,
+last_name VARCHAR(30) NOT NULL,
 sex VARCHAR(10),
 hire_date DATE
 );
@@ -55,7 +55,7 @@ hire_date DATE
 	ALTER TABLE employees ADD CONSTRAINT EMPLOYEES_ukey_emp_no UNIQUE (emp_no);
 
 CREATE TABLE salaries (
-emp_no int,
+emp_no int NOT NULL,
 salary int
 );
 
@@ -65,8 +65,8 @@ salary int
 	ALTER TABLE salaries ADD CONSTRAINT salaries_emp_no_fk FOREIGN KEY (emp_no) REFERENCES employees (emp_no);
 
 CREATE TABLE titles (
-title_id VARCHAR(20),
-title VARCHAR(30)
+title_id VARCHAR(20) NOT NULL,
+title VARCHAR(30) NOT NULL
 );
 
 	Alter TABLE titles
