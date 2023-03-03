@@ -1,7 +1,10 @@
 # sql-challenge
 Module 9 Challenge
 
-Data Analysis - 
+Goal is to review data and create a table schema for each of the six CSV files. Declare data types, foreign keys, and other constraints. 
+Import each CSV file into its corresponding SQL table.
+
+Perform Data Analysis on the following:
 List the employee number, last name, first name, sex, and salary of each employee.
 List the first name, last name, and hire date for the employees who were hired in 1986.
 List the manager of each department along with their department number, department name, employee number, last name, and first name.
